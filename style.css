@@ -155,6 +155,19 @@ textarea:focus {
   gap: 1.5rem;
 }
 
+.corrections-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .corrections-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
 .text-viewer {
   font-size: 1.2rem;
   line-height: 1.8;

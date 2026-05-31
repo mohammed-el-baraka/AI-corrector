@@ -28,10 +28,25 @@
         <!-- Interactive Text Display (TypingClub style highlights) -->
         <div class="text-viewer" id="highlighted-text"></div>
 
-        <!-- Full Corrected Text Display -->
-        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600;">Texte Corrigé Entier :</div>
-          <div id="full-corrected-text" class="text-viewer" style="background: rgba(52, 211, 153, 0.05); border-color: rgba(52, 211, 153, 0.2); font-weight: 500;"></div>
+        <!-- Full Corrected & Reformulated Text Displays -->
+        <div class="corrections-grid">
+          <!-- Simple Correction -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+              <span>✅ Correction Simple</span>
+              <span style="font-size: 0.75rem; font-weight: normal; color: var(--text-secondary); opacity: 0.8;">(mots corrigés)</span>
+            </div>
+            <div id="full-corrected-text" class="text-viewer" style="background: rgba(52, 211, 153, 0.03); border-color: rgba(52, 211, 153, 0.15); font-weight: 500; font-size: 1.1rem;"></div>
+          </div>
+          
+          <!-- Reformulation -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="font-size: 0.9rem; color: var(--accent-color); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+              <span>✨ Reformulation Fluide</span>
+              <span style="font-size: 0.75rem; font-weight: normal; color: var(--text-secondary); opacity: 0.8;">(meilleur style)</span>
+            </div>
+            <div id="reformulated-text" class="text-viewer" style="background: rgba(167, 139, 250, 0.03); border-color: rgba(167, 139, 250, 0.15); font-weight: 500; font-size: 1.1rem;"></div>
+          </div>
         </div>
         
         <!-- Live Detailed explanation box when an error is clicked/hovered -->

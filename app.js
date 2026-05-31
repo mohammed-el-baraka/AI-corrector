@@ -91,6 +91,7 @@ const detailReason = document.getElementById('detail-reason');
 const ideasSection = document.getElementById('ideas-section');
 const ideasList = document.getElementById('ideas-list');
 const fullCorrectedText = document.getElementById('full-corrected-text');
+const reformulatedText = document.getElementById('reformulated-text');
 
 // Toast notification helper
 function showToast(message) {
@@ -182,6 +183,7 @@ async function analyzeTextWithGroq(text) {
         "explanation": "explication claire et courte en français de la faute ou de la traduction"
       }
     ],
+    "reformulated_text": "La phrase de l'utilisateur entièrement reformulée et réécrite de manière fluide, élégante, naturelle et bien structurée en français correct, en conservant le sens d'origine.",
     "ideas": [
       "Idée/proposition 1 pour améliorer le texte ou suggérer de la créativité",
       "Idée/proposition 2 pour enrichir le vocabulaire"
@@ -257,6 +259,9 @@ function renderResults(data) {
   // Reconstruct and display full corrected text
   const fullText = currentTokens.map(t => t.type === 'correct' ? t.text : (t.corrected || t.text)).join('');
   fullCorrectedText.innerText = fullText.trim();
+
+  // Display reformulated text
+  reformulatedText.innerText = (data.reformulated_text || "").trim();
 
   // Render ideas
   if (data.ideas && data.ideas.length > 0) {
