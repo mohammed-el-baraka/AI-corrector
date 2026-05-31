@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Correcteur & Éditeur Français Simplifié</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="Logo" class="logo">
+      <h1>Correcteur Français Simplifié</h1>
+      <p>Écrivez en français. Intégrez des mots en anglais si nécessaire, l'IA s'occupe du reste.</p>
+    </header>
+
+    <main class="box">
+      <!-- Input Mode -->
+      <div id="input-view" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <textarea id="text-input" placeholder="Écrivez votre texte ici... Ex: 'Je doit faire un call demain car je suis busy.'"></textarea>
+        <button id="btn-correct" class="btn">✨ Analyser et corriger</button>
+      </div>
+
+      <!-- Result Mode -->
+      <div id="result-view" class="result-container">
+        <!-- Interactive Text Display (TypingClub style highlights) -->
+        <div class="text-viewer" id="highlighted-text"></div>
+
+        <!-- Full Corrected Text Display -->
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600;">Texte Corrigé Entier :</div>
+          <div id="full-corrected-text" class="text-viewer" style="background: rgba(52, 211, 153, 0.05); border-color: rgba(52, 211, 153, 0.2); font-weight: 500;"></div>
+        </div>
+        
+        <!-- Live Detailed explanation box when an error is clicked/hovered -->
+        <div class="correction-details" id="details-box">
+          <div class="detail-header">
+            <span id="detail-type">Correction</span>
+            <span style="color: var(--text-secondary); cursor: pointer;" onclick="closeDetails()">✕</span>
+          </div>
+          <div class="detail-correction">
+            <span style="text-decoration: line-through; color: var(--error-text);" id="detail-original"></span>
+            <span style="color: var(--success-text); margin: 0 0.5rem;">➔</span>
+            <span style="color: var(--success-text); font-weight: 600;" id="detail-corrected"></span>
+          </div>
+          <div class="detail-reason" id="detail-reason"></div>
+        </div>
+
+        <!-- Suggestion / Ideas Section -->
+        <div class="ideas-section" id="ideas-section">
+          <div class="ideas-title">💡 Idées d'Enrichissement</div>
+          <ul class="ideas-list" id="ideas-list"></ul>
+        </div>
+
+        <button id="btn-back" class="btn" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);">✍️ Réécrire / Modifier</button>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast-msg"></div>
+
+  <!-- Settings Button -->
+  <div class="settings-btn" id="btn-settings" title="Configuration de la clé API">⚙️</div>
+
+  <!-- Settings Modal -->
+  <div class="modal" id="settings-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Configuration API</h3>
+        <span class="modal-close" id="btn-close-settings">✕</span>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 1rem;">
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+          Votre clé API est d'abord lue depuis le fichier <code>.env</code>. Si vous hébergez le site, vous pouvez définir une clé personnalisée ici. Elle restera stockée en toute sécurité dans votre navigateur (localStorage).
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <label for="input-api-key" style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Clé API Groq :</label>
+          <input type="password" id="input-api-key" placeholder="Saisir la clé gsk_..." style="background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text-primary); font-family: inherit; font-size: 1rem; width: 100%; box-sizing: border-box; outline: none; transition: border-color 0.2s;">
+        </div>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <button id="btn-save-settings" class="btn" style="width: 100%;">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
