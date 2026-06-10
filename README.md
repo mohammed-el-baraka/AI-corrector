@@ -1,51 +1,43 @@
-# Correcteur Français Simplifié ✍️✨
+# AI Corrector
 
-Un correcteur d'orthographe et de grammaire moderne et intelligent, conçu pour simplifier l'écriture en français et vous aider à peaufiner vos textes. Il gère avec aisance le "Franglais" et propose des corrections adaptées et interactives.
+This project is the source code of the AI Corrector website, which is a tool for French spelling and grammar correction. You can access and use the website directly at the following link:
+
+https://mohammed-el-baraka.github.io/AI-corrector/
 
 ![Logo](logo.png)
 
-## 🚀 Fonctionnalités
+I created this tool because I often make typos or write incorrect French words in my messages and emails, which I really dislike. I wanted to build a simple tool to help me correct these mistakes, and I hope it helps you too.
 
-- **Correction IA Intelligente** : Analyse et corrige la grammaire, la conjugaison et l'orthographe en français.
-- **Support du Franglais** : Vous pouvez mélanger le français et l'anglais, l'IA traduit et intègre les expressions de façon naturelle.
-- **Interface Interactive** : Les erreurs sont surlignées. Cliquez ou survolez-les pour obtenir des explications détaillées et comprendre les corrections apportées.
-- **Suggestions d'Enrichissement** : Propose des idées pour améliorer votre style, enrichir votre vocabulaire et perfectionner vos écrits.
-- **Design Moderne & Réactif** : Une interface élégante en mode sombre avec des effets de glassmorphisme et des micro-animations fluides.
+You do not need to clone this project or run anything locally to use it. You can access all features directly through the link above.
 
-## 🛠️ Technologies Utilisées
+## Project Structure
 
-- **HTML5** & **Vanilla Javascript** (Logique applicative interactive)
-- **Vanilla CSS3** (Design sombre moderne, effet de flou et dégradés)
-- **Modèle d'IA** (Pour l'analyse du texte et les suggestions)
+* index.html: The main HTML structure of the web application
+* style.css: The design styles for the modern dark interface
+* app.js: The logic that manages events and handles the text analysis
+* logo.png: The application logo image
 
-## 📁 Structure du Projet
+## Technologies Used
 
-```text
-├── index.html       # Structure principale de l'application web
-├── style.css        # Système de design sombre et responsive
-├── app.js           # Gestionnaire d'événements et logique d'analyse
-└── logo.png         # Logo de l'application
-```
+* HTML5 and Vanilla Javascript for application logic and interactivity
+* Vanilla CSS3 for style and design
+* Groq API and LLM for text analysis and spelling corrections
 
-## ⚙️ Configuration de la Clé API
+## How to Get a Free Groq API Key
 
-Pour faire fonctionner l'application, vous devez fournir une clé API **Groq**. Deux méthodes sont disponibles :
+To use the corrector, you need a free API key from Groq. Follow these steps to get one:
 
-1. **Fichier Local (`.env`)** : 
-   - Créez un fichier nommé `.env` à la racine du projet.
-   - Ajoutez-y votre clé comme ceci :
-     ```env
-     GROQ_API_KEY=votre_cle_gsk_ici
-     ```
-   - *Note : Le fichier `.env` est déjà présent dans le `.gitignore` afin de ne jamais l'envoyer par erreur sur GitHub.*
+1. Go to the Groq Console website at https://console.groq.com/
+2. Sign up for a free account or log in if you already have one.
+3. Once logged in, navigate to the API Keys section in the sidebar menu.
+4. Click on the button to create a new API key.
+5. Give your key a name if prompted, then copy the generated key. Make sure to save it somewhere safe because you will not be able to see it again.
 
-2. **Interface Graphique (Configuration ⚙️)** :
-   - Cliquez sur l'icône d'engrenage **⚙️** en haut à droite de la page.
-   - Saisissez votre clé API. Elle sera stockée de manière sécurisée localement dans votre navigateur (`localStorage`).
+## How to Enter the API Key in the Website
 
-## 🚀 Installation et Utilisation
+Once you have your API key, you can enter it directly on the website:
 
-1. Clonez ce dépôt ou téléchargez les fichiers.
-2. Assurez-vous d'avoir configuré votre clé API avec l'une des méthodes ci-dessus.
-3. Ouvrez le fichier `index.html` directement dans votre navigateur (ou via un serveur de développement local comme Live Server dans VS Code).
-4. Saisissez votre texte, cliquez sur **Analyser et corriger** et laissez la magie opérer !
+1. Open the website: https://mohammed-el-baraka.github.io/AI-corrector/
+2. Click on the settings gear icon located in the top right corner of the page.
+3. Paste your Groq API key into the input field.
+4. Click the save button to store the key. The key is saved locally in your browser.
